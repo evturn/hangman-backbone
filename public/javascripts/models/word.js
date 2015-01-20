@@ -1,1 +1,5 @@
-var Word = Backbone.Model.extend({});
+var Item = Backbone.Model.extend({
+	defaults: {
+		word: ""
+	}
+});
