@@ -15,7 +15,12 @@ app.get('/words', function(require, response) {
 });
 
 
-words = ["dudeface"];
+words = [{name: "carpet"},
+	{name: "wall"},
+	{name: "ceiling"},
+	{name: "floor"},
+	{name: "chair"}
+];
 
 app.listen(5000, function() {
 	console.log('Listening on localhost:5000');

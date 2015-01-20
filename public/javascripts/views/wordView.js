@@ -1,11 +1,11 @@
 var WordView = Backbone.View.extend({
-	el: '#word',
+	className: "col-xs-3 col-xs-offset-4",
 	template: _.template($('#word-template').html()),
 	initialize: function() {
 		this.render();
 	},
-	render: function() {
-		sentWord = this.model.toJSON();
-		this.$el.html(this.template(sentWord));
-	}
+  render: function(){
+    this.$el.html(this.template(this.model.toJSON()));
+    return this;
+  },
 });

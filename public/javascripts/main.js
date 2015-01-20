@@ -1,9 +1,10 @@
-word = new Word();
-word.fetch();
-
-wordView = new WordView({model: word});
-
+var words = new Words();
+words.fetch({reset: true});
+wordsView = new WordsView({collection: words});
 
 $(function() {
+
+console.log('words', words);
+
 
 });
