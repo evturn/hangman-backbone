@@ -15,7 +15,7 @@ app.get('/words', function(require, response) {
 });
 
 
-words = ["cat", "building", "dudeface"];
+words = ["dudeface"];
 
 app.listen(5000, function() {
 	console.log('Listening on localhost:5000');

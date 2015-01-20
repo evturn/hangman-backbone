@@ -1,1 +1,3 @@
-var Word = Backbone.Model.extend({});
+var Word = Backbone.Model.extend({
+	urlRoot: '/words'
+});

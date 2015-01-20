@@ -1,3 +1,4 @@
-var Words = Backbone.Collection.extend({
-	model: Word
-});
+// var Words = Backbone.Collection.extend({
+// 	model: Word,
+// 	url: '/words',
+// });
