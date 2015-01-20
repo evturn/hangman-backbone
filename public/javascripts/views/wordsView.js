@@ -16,7 +16,7 @@ var WordsView = Backbone.View.extend({
     characters = model.get('name').length;
     this.setHidden();
     //
-    this.addOne(model);
+    // this.addOne(model);
     }.bind(this));
   },
   setHidden: function() { 

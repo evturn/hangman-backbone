@@ -4,7 +4,4 @@ wordsView = new WordsView({collection: words});
 
 $(function() {
 
-console.log('words', words);
-
-
 });
