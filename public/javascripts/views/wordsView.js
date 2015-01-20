@@ -17,10 +17,10 @@ var WordsView = Backbone.View.extend({
     }.bind(this));
   },
   transformWord: function() { 
-    String.prototype.repeat = function( blank ) {
-    return new Array( blank + 1 ).join( this );
+    String.prototype.repeat = function(characters) {
+    return new Array(characters + 1).join(this);
     }
-  alert( "_".repeat( characters ) );
+  hiddenWord = ("_".repeat(characters));
   }
 });
 
