@@ -14,24 +14,23 @@ var WordsView = Backbone.View.extend({
     this.collection.each(function(model) {
     theWord = model.get('name');
     characters = model.get('name').length;
-    console.log(characters);
-    console.log(theWord);
-    this.transformHidden();
+    this.setHidden();
     //
     this.addOne(model);
     }.bind(this));
   },
-  transformHidden: function() { 
+  setHidden: function() { 
     String.prototype.repeat = function(characters) {
     return new Array(characters + 1).join(this);
     }
   hiddenWord = ("_".repeat(characters));
-  console.log(hiddenWord);
-  this.setHidden();
+  this.setGame();
   },
-  setHidden: function() {
+  setGame: function() {
     state = new State({name: hiddenWord});
     var stateView = new StateView({model: state});
-    console.log('state', state.get('name'));
+    theState = state.get('name');
+    var game = new Game({word: theWord, state: theState, tries: 0})
+    console.log('game', game);
   }
 });
