@@ -21,6 +21,7 @@ var WordsView = Backbone.View.extend({
     return new Array(characters + 1).join(this);
     }
   hiddenWord = ("_".repeat(characters));
+  console.log(hiddenWord);
   }
 });
 
