@@ -12,16 +12,21 @@ var WordsView = Backbone.View.extend({
     this.collection.each(function(model) {
     characters = model.get('name').length
     console.log(characters);
-    this.transformWord();
+    this.transformHidden();
     this.addOne(model);
     }.bind(this));
   },
-  transformWord: function() { 
+  transformHidden: function() { 
     String.prototype.repeat = function(characters) {
     return new Array(characters + 1).join(this);
     }
   hiddenWord = ("_".repeat(characters));
   console.log(hiddenWord);
+  this.setHidden();
+  },
+  setHidden: function() {
+    state = new State({name: hiddenWord});
+    console.log('state', state);
   }
 });
 

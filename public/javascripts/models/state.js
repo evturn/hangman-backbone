@@ -1,1 +1,3 @@
-var State = Backbone.Model.extend({});
+var State = Backbone.Model.extend({
+	name: ''
+});
