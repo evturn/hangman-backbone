@@ -10,17 +10,17 @@ var WordsView = Backbone.View.extend({
   addAll: function() {
     this.$el.empty();
     this.collection.each(function(model) {
-    characters = model.get('name').length;
+    characters = model.get('name').length
     console.log(characters);
     this.transformWord();
     this.addOne(model);
     }.bind(this));
   },
   transformWord: function() { 
-    String.prototype.repeat = function(blank) {
-      return new Array( blank + 1 ).join( this );
+    String.prototype.repeat = function( blank ) {
+    return new Array( blank + 1 ).join( this );
     }
-  ("_".repeat(characters));
+  alert( "_".repeat( characters ) );
   }
 });
 
