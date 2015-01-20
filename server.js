@@ -10,7 +10,7 @@ app.get('/', function(require, response) {
 	response.render('index.html');
 });
 
-app.get('/words', function(require, response) {
+app.get('/words', function(request, response) {
 	response.status(200).json(words);
 });
 
