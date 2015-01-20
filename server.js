@@ -15,11 +15,7 @@ app.get('/words', function(require, response) {
 });
 
 
-words = [{name: "carpet"},
-	{name: "wall"},
-	{name: "ceiling"},
-	{name: "floor"},
-	{name: "chair"}
+words = [{name: "carpet"}
 ];
 
 app.listen(5000, function() {
