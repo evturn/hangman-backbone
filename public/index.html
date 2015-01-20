@@ -23,18 +23,9 @@
 	
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xs-12" id="word">
-
-		</div>
-		<div class="col-xs-9 col-xs-offset-3" id="state">
-
-		</div>
-		<div class="col-xs-9">
-			<img src="images/man.png" id="image">
-		</div>
-		<div class="col-xs-3 col-xs-offset-4" id="letter-input">
-			
-		</div>
+		<div class="col-xs-9 col-xs-offset-3" id="state"></div>
+		<div class="col-xs-9" id="hangman-image"></div>
+		<div class="col-xs-3 col-xs-offset-4" id="letter-input"></div>
 	</div>
 </div>
 
@@ -48,6 +39,10 @@
 
 <script type="text/template" id="letter-input-template">
 	<input class="form-control input-lg" type"text" id="letter-submit">
+</script>
+
+<script type="text/template" id="hangman-image-template">
+	<img src="images/man.png" id="image">
 </script>
 
 
@@ -67,6 +62,7 @@
 	<script src="javascripts/models/game.js"></script>
 	<script src="javascripts/collections/words.js"></script>
 	<script src="javascripts/views/letterInput.js"></script>
+	<script src="javascripts/views/hangmanImage.js"></script>
 	<script src="javascripts/views/wordView.js"></script>
 	<script src="javascripts/views/wordsView.js"></script>
 	<script src="javascripts/views/stateView.js"></script>
