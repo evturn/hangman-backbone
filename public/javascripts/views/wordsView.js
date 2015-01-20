@@ -9,10 +9,15 @@ var WordsView = Backbone.View.extend({
   },
   addAll: function() {
     this.$el.empty();
+    // make function pulling random model
+    // then function pulling name and length
     this.collection.each(function(model) {
-    characters = model.get('name').length
+    theWord = model.get('name');
+    characters = model.get('name').length;
     console.log(characters);
+    console.log(theWord);
     this.transformHidden();
+    //
     this.addOne(model);
     }.bind(this));
   },
@@ -26,8 +31,6 @@ var WordsView = Backbone.View.extend({
   },
   setHidden: function() {
     state = new State({name: hiddenWord});
-    console.log('state', state);
+    console.log('state', state.get('name'));
   }
 });
-
-console.log('WordsView');
