@@ -31,6 +31,7 @@ var WordsView = Backbone.View.extend({
   },
   setHidden: function() {
     state = new State({name: hiddenWord});
+    var stateView = new StateView({model: state});
     console.log('state', state.get('name'));
   }
 });
