@@ -5,3 +5,8 @@
 	border-radius: 25%;
 }
 
+#image {
+	max-height: 200px;
+	max-width: 50%;
+}
+
