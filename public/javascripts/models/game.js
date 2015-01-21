@@ -3,7 +3,7 @@ var Game = Backbone.Model.extend({
 		word: "",
 		state: "",
 		tries: 0,
-		threshold: 6	
+		threshold: 6
 	},
 	urlRoot: '/words',
 	initialize: function() {
