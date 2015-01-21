@@ -26,8 +26,9 @@ var LetterInput = Backbone.View.extend({
         console.log('hell yeah dude', spots);
    			splitState = currentState.split('');
       	splitState[spots] = letter;
-      	game.set({state: splitState});
-      	console.log(splitState);
+      	currentState = splitState.join('');
+      	game.set({state: currentState});
+      	console.log(currentState);
       } else {
         console.log('nah dog');
         attempts = game.threshold - 1;
