@@ -1,6 +1,6 @@
-var words = new Words();
-words.fetch({reset: true});
-gameView = new GameView({collection: words});
+var games = new Games();
+games.fetch({reset: true});
+gameView = new GameView({collection: games});
 new LetterInput();
 new HangmanImage();
 
