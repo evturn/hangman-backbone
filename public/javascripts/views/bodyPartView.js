@@ -1,4 +1,4 @@
-var HangmanImage = Backbone.View.extend({
+var BodyPartView = Backbone.View.extend({
 	el: '#hangman-image',
 	template: _.template($('#hangman-image-template').html()),
 	initialize: function() {
