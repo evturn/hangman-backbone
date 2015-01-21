@@ -21,16 +21,17 @@ var WordsView = Backbone.View.extend({
   },
   setHidden: function() { 
     String.prototype.repeat = function(characters) {
-    return new Array(characters + 1).join(this);
-    }
-  hiddenWord = ("_".repeat(characters));
-  this.setGame();
+      return new Array(characters + 1).join(this);
+      }
+    hiddenWord = ("_".repeat(characters));
+    this.setGame();
   },
   setGame: function() {
     state = new State({name: hiddenWord});
     var stateView = new StateView({model: state});
     theState = state.get('name');
-    game = new Game({word: theWord, state: theState, tries: 0})
+    game = new Game({word: theWord, state: theState, tries: 0, threshold: 6})
+    guesses = new Guesses({model: game});
     console.log('game', game);
   }
 });
