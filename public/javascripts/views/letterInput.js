@@ -31,13 +31,15 @@ var LetterInput = Backbone.View.extend({
       	console.log(currentState);
       } else {
         console.log('nah dog');
-        attempts = game.threshold - 1;
+        this.incorrectGuess();
       }
-    this.swapLetter();
+    
   },
-   swapLetter: function() {
+   incorrectGuess: function() {
+    attempts = game.get('threshold');
+	 	currentThreshold = (attempts - 1);
+	 	console.log(currentThreshold);
 	 	
-	 	console.log('no swap');
 	 	
   }
 });
