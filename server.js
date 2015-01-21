@@ -11,10 +11,20 @@ app.get('/', function(require, response) {
 });
 
 app.get('/words', function(request, response) {
-	response.status(200).json(words);
+	var randomWord = words[Math.floor(Math.random() * words.length)];
+	var characters = randomWord.length;
+	String.prototype.repeat = function(characters) {
+      return new Array(characters + 1).join(this);
+      }
+  var hiddenWord = ("_".repeat(characters));
+
+  game = {word: randomWord, state: hiddenWord};
+	response.status(200).json(game);
 });
 
-words = [{name: "carpet"}];
+words = ["carpet", "doghouse", "concrete", 
+	"chocolate", "doughnut", "napikn"
+];
 
 app.listen(5000, function() {
 	console.log('Listening on localhost:5000');
