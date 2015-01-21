@@ -16,6 +16,9 @@ var LetterInput = Backbone.View.extend({
 		guessValue = $('#input-field').val();
 		letter = String(guessValue);
 		console.log(letter);
+		newTries = game.get('tries');
+		currentTries = (newTries + 1);
+		game.set({tries: currentTries});
 		this.testLetter();
 	},
 	 testLetter: function() {
@@ -32,14 +35,15 @@ var LetterInput = Backbone.View.extend({
       } else {
         console.log('nah dog');
         this.incorrectGuess();
-      }
-    
+      }   
   },
    incorrectGuess: function() {
     attempts = game.get('threshold');
 	 	currentThreshold = (attempts - 1);
+	 	game.set({threshold: currentThreshold});
 	 	console.log(currentThreshold);
-	 	
-	 	
+	 		if (currentThreshold == 0) {
+	 			alert('Yalls is finished');
+	 		}
   }
 });
