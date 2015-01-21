@@ -1,12 +1,10 @@
-var game = new Game();
-game.fetch({reset: true});
+game = new Game();
+
 console.log(game);
-var gameView = new GameView({model: game});
 new LetterInput();
 new HangmanImage();
+gameView = new GameView({model: game});
 
 $(function() {
-
-
 
 });
