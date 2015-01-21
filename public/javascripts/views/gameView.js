@@ -10,14 +10,8 @@ var GameView = Backbone.View.extend({
   },
   addAll: function() {
     this.$el.empty();
-    // make function pulling random model
-    // then function pulling name and length
     this.collection.each(function(model) {
-    theWord = model.get('name');
-    characters = model.get('name').length;
-    this.setHidden();
-    //
-    // this.addOne(model);
+    this.addOne(model);
     }.bind(this));
   },
   setHidden: function() { 

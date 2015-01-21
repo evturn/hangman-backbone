@@ -17,7 +17,6 @@ app.get('/words', function(request, response) {
       return new Array(characters + 1).join(this);
       }
   var hiddenWord = ("_".repeat(characters));
-
   game = {word: randomWord, state: hiddenWord};
 	response.status(200).json(game);
 });
