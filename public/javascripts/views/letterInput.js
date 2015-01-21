@@ -29,6 +29,8 @@ var LetterInput = Backbone.View.extend({
 	},
 	swapLetter: function() {
 		gameState[spots] = letter;
+		game.set({state: gameState});
+		newGame = new WordView({model: game});
 		console.log(gameState);
 	}
 });
