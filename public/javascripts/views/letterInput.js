@@ -16,6 +16,7 @@ var LetterInput = Backbone.View.extend({
 		guessValue = $('#input-field').val();
 		letter = String(guessValue);
 		console.log(letter);
+		$('#input-field').val('');
 		newTries = game.get('tries');
 		currentTries = (newTries + 1);
 		game.set({tries: currentTries});

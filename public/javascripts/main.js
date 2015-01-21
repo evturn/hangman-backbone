@@ -6,5 +6,4 @@ new HangmanImage();
 
 $(function() {
 
-
 });
