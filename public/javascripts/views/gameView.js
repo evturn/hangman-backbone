@@ -1,4 +1,4 @@
-var WordsView = Backbone.View.extend({
+var GameView = Backbone.View.extend({
 	el: '#word',
 	initialize: function() {
     this.listenTo(this.collection, 'reset', this.addAll);

@@ -1,6 +1,6 @@
 var Guesses = Backbone.View.extend({
-	el: '#guesses',
-	template: _.template($('#guesses-template').html()),
+	el: '#game',
+	template: _.template($('#game-template').html()),
 	initialize: function() {
 		this.render();
 	},

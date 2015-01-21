@@ -24,7 +24,7 @@
 <div class="container-fluid">
 	<div class="row">
 		
-		<div class="col-xs-8 col-xs-offset-4" id="guesses"></div>
+		<div class="col-xs-8 col-xs-offset-4" id="game"></div>
 		<div class="col-xs-9" id="hangman-image"></div>
 		<div class="col-xs-3 col-xs-offset-4" id="letter-input"></div>
 	</div>
@@ -38,7 +38,7 @@
 	
 </script>
 
-<script type="text/template" id="guesses-template">
+<script type="text/template" id="game-template">
 	<h1><%= state %></h1>
 	<span class="badge">Lives <%= threshold %></span>
 </script>
@@ -72,7 +72,7 @@
 	<script src="javascripts/views/guesses.js"></script>
 	<script src="javascripts/views/hangmanImage.js"></script>
 	<script src="javascripts/views/wordView.js"></script>
-	<script src="javascripts/views/wordsView.js"></script>
+	<script src="javascripts/views/gameView.js"></script>
 	<script src="javascripts/main.js"></script>
 </body>
 </html>
