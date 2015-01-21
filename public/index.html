@@ -32,12 +32,12 @@
 <script type="text/template" id="game-template">
 	<h1><%= state %></h1>
 	<span class="badge">Lives <%= threshold %></span>
-	<span class="badge">Attempts <%= tries %></span>
+	<span class="badge left">Guesses <%= tries %></span>
 </script>
 
 <script type="text/template" id="letter-input-template">
 	<input class="form-control input-lg" type"text" id="input-field">
-	<input class="form-control input-lg" type="submit" id="input-submit">
+	<input class="form-control input-lg" type="submit" id="input-submit" value="&#10173;">
 </script>
 
 <script type="text/template" id="hangman-image-template">
