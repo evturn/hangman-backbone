@@ -5,7 +5,8 @@ var GameView = Backbone.View.extend({
     this.listenTo(this.model, 'change', this.render);
   },
   render: function() {
-    this.$el.html(this.template(this.model.toJSON()));
+    this.$el.empty();
+    this.$el.append(this.template(this.model.toJSON()));
     return this;
   },
 });
