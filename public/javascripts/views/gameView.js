@@ -31,7 +31,7 @@ var GameView = Backbone.View.extend({
     theState = state.get('name');
     gameState = theState.split('');
     gameWord = theWord.split('');
-    game = new Game({word: gameWord, state: theState, tries: 0, threshold: 6})
+    game = new Game({word: gameWord, state: gameState, tries: 0, threshold: 6})
     guesses = new Guesses({model: game});
     console.log('game', game);
   },

@@ -27,12 +27,8 @@ var LetterInput = Backbone.View.extend({
 		}
 		this.swapLetter();
 	},
-	displayGuess: function() {
-		console.log(spots);
-	},
 	swapLetter: function() {
-		gameState.slice('');
-		gameState[spots].replace('_', letter);
+		gameState[spots] = letter;
 		console.log(gameState);
 	}
 });
