@@ -1,11 +1,9 @@
 var LettersView = Backbone.View.extend({
 	el: '#letter-bank',
-	template: _.template($('#letter-bank-template').html()),
 	initialize: function() {
-		this.render();
+		this.listenTo(this.collection, 'add', this.addOne);
 	},
-	render: function() {
-		this.$el.append(this.template(this.model.toJSON()));
-		return this;
+	addOne: function() {
+		
 	}
 });
