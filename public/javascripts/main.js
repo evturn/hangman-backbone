@@ -1,7 +1,7 @@
-var games = new Games();
-games.fetch({reset: true});
-console.log(games);
-gameView = new GameView({collection: games});
+var game = new Game();
+game.fetch({reset: true});
+console.log(game);
+var gameView = new GameView({model: game});
 new LetterInput();
 new HangmanImage();
 

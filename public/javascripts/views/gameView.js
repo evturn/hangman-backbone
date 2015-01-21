@@ -1,8 +1,8 @@
 var GameView = Backbone.View.extend({
-	el: '#word',
+	el: '#game',
   template: _.template($('#game-template').html()),
 	initialize: function() {
-    this.listenTo(this.collection, 'reset', this.addAll);
+    this.render();
   },
   render: function() {
     this.$el.html(this.template(this.model.toJSON()));

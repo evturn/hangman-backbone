@@ -4,5 +4,6 @@ var Game = Backbone.Model.extend({
 		state: "",
 		tries: 0,
 		threshold: 6	
-	}
+	},
+	urlRoot: '/words'
 });
