@@ -28,12 +28,11 @@ var WordsView = Backbone.View.extend({
   },
   setGame: function() {
     state = new State({name: hiddenWord});
-    var stateView = new StateView({model: state});
     theState = state.get('name');
     gameState = theState.split('');
     gameWord = theWord.split('');
     game = new Game({word: gameWord, state: theState, tries: 0, threshold: 6})
     guesses = new Guesses({model: game});
     console.log('game', game);
-  }
+  },
 });

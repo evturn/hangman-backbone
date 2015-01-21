@@ -23,7 +23,7 @@
 	
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xs-9 col-xs-offset-3" id="state"></div>
+		
 		<div class="col-xs-8 col-xs-offset-4" id="guesses"></div>
 		<div class="col-xs-9" id="hangman-image"></div>
 		<div class="col-xs-3 col-xs-offset-4" id="letter-input"></div>
@@ -31,19 +31,21 @@
 </div>
 
 <script type="text/template" id="word-template">
-	<h1><%= name %></h1>
+	
 </script>
 
 <script type="text/template" id="state-template">
-	<h1><%= name %></h1>
+	
 </script>
 
 <script type="text/template" id="guesses-template">
+	<h1><%= state %></h1>
 	<span class="badge">Lives <%= threshold %></span>
 </script>
 
 <script type="text/template" id="letter-input-template">
-	<input class="form-control input-lg" type"text" id="letter-submit">
+	<input class="form-control input-lg" type"text" id="input-field">
+	<input class="form-control input-lg" type="submit" id="input-submit">
 </script>
 
 <script type="text/template" id="hangman-image-template">
@@ -71,7 +73,6 @@
 	<script src="javascripts/views/hangmanImage.js"></script>
 	<script src="javascripts/views/wordView.js"></script>
 	<script src="javascripts/views/wordsView.js"></script>
-	<script src="javascripts/views/stateView.js"></script>
 	<script src="javascripts/main.js"></script>
 </body>
 </html>
