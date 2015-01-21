@@ -30,7 +30,7 @@ var WordsView = Backbone.View.extend({
     state = new State({name: hiddenWord});
     var stateView = new StateView({model: state});
     theState = state.get('name');
-    var game = new Game({word: theWord, state: theState, tries: 0})
+    game = new Game({word: theWord, state: theState, tries: 0})
     console.log('game', game);
   }
 });

@@ -14,9 +14,7 @@ app.get('/words', function(request, response) {
 	response.status(200).json(words);
 });
 
-
-words = [{name: "carpet"}
-];
+words = [{name: "carpet"}];
 
 app.listen(5000, function() {
 	console.log('Listening on localhost:5000');
