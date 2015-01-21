@@ -43,8 +43,12 @@ var LetterInput = Backbone.View.extend({
 	 	currentThreshold = (attempts - 1);
 	 	game.set({threshold: currentThreshold});
 	 	console.log(currentThreshold);
+	 	this.loseLimb();
 	 		if (currentThreshold == 0) {
 	 			alert('Yalls is finished');
 	 		}
+  },
+  loseLimb: function() {
+
   }
 });
