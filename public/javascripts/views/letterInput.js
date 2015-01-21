@@ -13,7 +13,10 @@ var LetterInput = Backbone.View.extend({
 	},
 	userGuess: function(e) {
 		e.preventDefault();
-		var letter = $('#input-field').val();
+		letter = $('#input-field').val();
 		console.log(letter);
+		guessedLetters.push(letter);
+		attempts = game.threshold - 1;
+		console.log(attempts);
 	},
 });
