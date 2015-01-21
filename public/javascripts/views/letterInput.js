@@ -16,20 +16,24 @@ var LetterInput = Backbone.View.extend({
 		guessValue = $('#input-field').val();
 		letter = String(guessValue);
 		console.log(letter);
+		this.testLetter();
 	},
-	// testLetter: function() {
-	// 	if (_.contains(gameWord, letter) == true) {
-	// 		spots = _.indexOf(gameWord, letter);
-	// 		console.log('hell yeah dude');
-	// 	} else {
-	// 		console.log('nah dog');
-	// 		attempts = game.threshold - 1;
-	// 	}
-	// 	this.swapLetter();
-	// },
-	// swapLetter: function() {
-	// 	gameState[spots] = letter;
-	// 	game.set({state: gameState});
-	// 	console.log(gameState);
-	// }
+	 testLetter: function() {
+    currentState = game.get('state');
+    currentWord  = game.get('word');
+      if (_.contains(currentWord, letter) == true) {
+        spots = _.indexOf(currentWord, letter);
+        console.log('hell yeah dude', spots);
+      } else {
+        console.log('nah dog');
+        attempts = game.threshold - 1;
+      }
+    this.swapLetter();
+  },
+   swapLetter: function() {
+   	splitState = currentState.split('');
+	 	console.log(splitState);
+	 	splitState[spots] = letter;
+	 	game.set({state: splitState});
+  }
 });
