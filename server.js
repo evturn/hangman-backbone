@@ -21,11 +21,15 @@ app.get('/words', function(request, response) {
 	response.status(200).json(game);
 });
 
+app.get('/bodyparts', function(request, response) {
+	response.status(200).json(hangmen);
+});
+
 words = ["carpet", "doghouse", "concrete", 
 	"chocolate", "doughnut", "napikn"
 ];
 
-hangmen = ["images/man1.png", "images/man2.png", "images/man3.png", "images/man4.png", "images/man5.png", "images/man6.png", ]
+hangmen = ["images/man1.png", "images/man2.png", "images/man3.png", "images/man4.png", "images/man5.png", "images/man6.png", ];
 
 app.listen(5000, function() {
 	console.log('Listening on localhost:5000');
