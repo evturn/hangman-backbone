@@ -24,7 +24,9 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-11 col-xs-offset-1" id="game"></div>
-		<div class="col-xs-11 col-xs-offset-1" id="hangman-image"></div>
+		<div class="col-xs-11 col-xs-offset-1" id="hangman-image">
+			<img src="images/man6.png" id="image">
+		</div>
 		<div class="col-xs-3 col-xs-offset-4" id="letter-input"></div>
 	</div>
 </div>
@@ -41,7 +43,7 @@
 </script>
 
 <script type="text/template" id="hangman-image-template">
-	<img src="images/man6.png" id="image">
+	<img src="<%= img %>" id="image">
 </script>
 
 

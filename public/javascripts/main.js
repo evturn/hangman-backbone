@@ -5,5 +5,5 @@ new LetterInput();
 bodyParts = new BodyParts();
 
 $(function() {
-
+	
 });

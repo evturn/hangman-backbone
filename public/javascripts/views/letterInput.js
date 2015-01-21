@@ -49,6 +49,22 @@ var LetterInput = Backbone.View.extend({
 	 		}
   },
   loseLimb: function() {
+  	if (currentThreshold == 6){
+  		new BodyPartView({model: bodyParts.models[0]});
+  	} else if  (currentThreshold == 5){
+  		new BodyPartView({model: bodyParts.models[4]});
+  	} else if  (currentThreshold == 4){
+  		new BodyPartView({model: bodyParts.models[5]});
+  	} else if  (currentThreshold == 3){
+  		new BodyPartView({model: bodyParts.models[6]});
+  	}	else if  (currentThreshold == 2){
+  		new BodyPartView({model: bodyParts.models[1]});
+  	} else if  (currentThreshold == 1){
+  		new BodyPartView({model: bodyParts.models[0]});
+  	} else if  (currentThreshold == 0){
+  		new BodyPartView({model: bodyParts.models[0]})
+  	} else {
 
+  	}
   }
 });

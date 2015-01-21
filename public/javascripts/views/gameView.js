@@ -10,12 +10,3 @@ var GameView = Backbone.View.extend({
     return this;
   },
 });
-  // setGame: function() {
-  //   state = new State({name: hiddenWord});
-  //   theState = state.get('name');
-  //   gameState = theState.split('');
-  //   gameWord = theWord.split('');
-  //   game = new Game({word: gameWord, state: gameState, tries: 0, threshold: 6})
-  //   guesses = new Guesses({model: game});
-  //   console.log('game', game);
-  // },
