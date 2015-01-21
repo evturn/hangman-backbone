@@ -2,6 +2,7 @@ var GameView = Backbone.View.extend({
 	el: '#word',
 	initialize: function() {
     this.listenTo(this.collection, 'reset', this.addAll);
+    this.listenTo(this.collection, 'change', this.addAll);
   },
   addOne: function(model) {
     var view = new WordView({model: model});

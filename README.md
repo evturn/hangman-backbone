@@ -7,7 +7,7 @@ Backbone
 Backbone.localStorage
 Bootstrap
 
-## CSS vender
+## CSS vendor
 Bootstrap
 
 ## node_modules
