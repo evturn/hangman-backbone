@@ -24,6 +24,10 @@ var LetterInput = Backbone.View.extend({
       if (_.contains(currentWord, letter) == true) {
         spots = _.indexOf(currentWord, letter);
         console.log('hell yeah dude', spots);
+   			splitState = currentState.split('');
+      	splitState[spots] = letter;
+      	game.set({state: splitState});
+      	console.log(splitState);
       } else {
         console.log('nah dog');
         attempts = game.threshold - 1;
@@ -31,9 +35,8 @@ var LetterInput = Backbone.View.extend({
     this.swapLetter();
   },
    swapLetter: function() {
-   	splitState = currentState.split('');
-	 	console.log(splitState);
-	 	splitState[spots] = letter;
-	 	game.set({state: splitState});
+	 	
+	 	console.log('no swap');
+	 	
   }
 });
