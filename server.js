@@ -32,6 +32,6 @@ words = ["carpet", "doghouse", "concrete",
 hangmen = [{img: 'images/man1.png'}, {img: 'images/man2.png'}, {img: 'images/man3.png'}, {img: 'images/man4.png'}, {img: 'images/man5.png'}, {img: 'images/man6.png'}
 ];
 
-app.listen(5000, function() {
+app.listen(3000, function() {
 	console.log('Listening on localhost:5000');
 });
