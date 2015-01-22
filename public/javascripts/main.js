@@ -1,3 +1,11 @@
+
+$(function() {
+
+	hangmanStart();
+
+});
+
+
 function hangmanStart() {
 	game = new Game();
 	new GameView({model: game});
@@ -5,9 +13,3 @@ function hangmanStart() {
 	new LetterInput();
 	bodyParts = new BodyParts();
 };
-
-$(function() {
-
-	hangmanStart();
-
-});
