@@ -25,9 +25,7 @@ app.get('/bodyparts', function(request, response) {
 	response.status(200).json(hangmen);
 });
 
-words = ["carpet", "doghouse", "concrete", 
-	"chocolate", "doughnut", "napikn"
-];
+words = ["carpet"];
 
 hangmen = [{img: 'images/man1.png'}, {img: 'images/man2.png'}, {img: 'images/man3.png'}, {img: 'images/man4.png'}, {img: 'images/man5.png'}, {img: 'images/man6.png'}
 ];
