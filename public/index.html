@@ -29,7 +29,7 @@
 			<img src="images/man6.png" id="image">
 		</div>
 			<div class="col-xs-3 col-xs-offset-4 col-sm-3 col-sm-offset-5" id="letter-input"></div>
-			<div class="col-xs-3 col-xs-offset-4 col-sm-3 col-sm-offset-5" id="letter-bank">
+			<div class="col-xs-11 col-xs-offset-1 col-sm-3 col-sm-offset-5" id="letter-bank">
 				<ul id="letters">
 				</ul>
 			</div>
@@ -49,7 +49,9 @@
 </script>
 
 <script type="text/template" id="letter-bank-template">
-	<h4><%= letter %></h4>
+	<div class="col-xs-1 col-sm-1">
+		<h4><%= letter %></h4>
+	</div>
 </script>
 
 <script type="text/template" id="hangman-image-template">

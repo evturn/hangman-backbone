@@ -35,5 +35,5 @@ hangmen = [{img: 'images/man1.png'}, {img: 'images/man2.png'}, {img: 'images/man
 var port = process.env.PORT || 3000;
 
 app.listen(port, function() {
-	console.log('Listening on localhost:5000');
+	console.log('Listening on localhost:3000');
 });
