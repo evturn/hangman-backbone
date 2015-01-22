@@ -4,7 +4,7 @@ var LetterView = Backbone.View.extend({
 	className: 'letter',
 	template: _.template($('#letter-bank-template').html()),
 	initialize: function() {
-		this.listenTo(this.model, 'add', this.render);
+		this.render();
 	},
 	render: function() {
 		this.$el.append(this.template(this.model.toJSON()));
