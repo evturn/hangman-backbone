@@ -7,3 +7,9 @@ letters = new Letters();
 $(function() {
 	
 });
+
+
+$('#dbl-exclimation').on('click', function() {
+	grabbedMoment = momentsCollection.get(2);
+	console.log(grabbedMoment);
+})
