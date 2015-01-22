@@ -24,12 +24,12 @@
 	
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xs-11 col-xs-offset-1" id="game"></div>
-		<div class="col-xs-11 col-xs-offset-1" id="hangman-image">
+		<div class="col-xs-12 col-sm-11 col-sm-offset-1" id="game"></div>
+		<div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1" id="hangman-image">
 			<img src="images/man6.png" id="image">
 		</div>
-			<div class="col-xs-3 col-xs-offset-4" id="letter-input"></div>
-			<div class="col-xs-3 col-xs-offset-4" id="letter-bank">
+			<div class="col-xs-3 col-xs-offset-4 col-sm-3 col-sm-offset-5" id="letter-input"></div>
+			<div class="col-xs-3 col-xs-offset-4 col-sm-3 col-sm-offset-5" id="letter-bank">
 				<ul id="letters">
 				</ul>
 			</div>
@@ -38,8 +38,8 @@
 
 <script type="text/template" id="game-template">
 	<h1><%= state %></h1>
-		<span class="badge">Lives <%= threshold %></span>
-		<span class="badge left">Guesses <%= tries %></span>
+	<span class="badge">Lives <%= threshold %></span>
+	<span class="badge left">Guesses <%= tries %></span>
 </script>
 
 <script type="text/template" id="letter-input-template">
@@ -50,7 +50,6 @@
 <script type="text/template" id="letter-bank-template">
 	<%= letter %>
 </script>
-
 
 <script type="text/template" id="hangman-image-template">
 	<img src="<%= img %>" id="image">
