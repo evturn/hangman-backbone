@@ -23,7 +23,6 @@ var LetterInput = Backbone.View.extend({
 		guessValue = $('#input-field').val();
 		letter = String(guessValue);
 		currentLetter = new Letter({letter: letter});
-    letterView = new LetterView({model: currentLetter});
 		$('#input-field').val('');
 		newTries = game.get('tries');
 		currentTries = (newTries + 1);
@@ -44,6 +43,7 @@ var LetterInput = Backbone.View.extend({
       	console.log(currentState);
       } else {
         console.log('nah dog');
+        letterView = new LetterView({model: currentLetter});
         this.incorrectGuess();
       }
     this.potentialWinner();
