@@ -3,7 +3,8 @@ var LetterInput = Backbone.View.extend({
 	template: _.template($('#letter-input-template').html()),
 	events: {
 		'click #input-submit': 'userGuess',
-    'click #start-over': 'startOver'
+    'click #start-over': 'startOver',
+    'keypress #input-field': 'userEnter'
 	},
 	initialize: function() {
 		this.render();
@@ -12,35 +13,36 @@ var LetterInput = Backbone.View.extend({
 		this.$el.html(this.template());
 		return this;
 	},
-  potentialWinner: function() {
-    checkPoint = game.get('state');
-    if (_.contains(currentState, '_') == false) {
-      sweetAlert('You did it!');
+  prepTest: function() {
+    guessValue = $('#input-field').val();
+    letter = String(guessValue);
+    currentLetter = new Letter({letter: letter});
+    $('#input-field').val('');
+    newTries = game.get('tries');
+    currentTries = (newTries + 1);
+    game.set({tries: currentTries});
+    this.testLetter();
+  },
+  userEnter: function(e) {
+    if (e.which === 13) {
+      this.prepTest();
     }
   },
-	userGuess: function(e) {
-		e.preventDefault();
-		guessValue = $('#input-field').val();
-		letter = String(guessValue);
-		currentLetter = new Letter({letter: letter});
-		$('#input-field').val('');
-		newTries = game.get('tries');
-		currentTries = (newTries + 1);
-		game.set({tries: currentTries});
-
-		this.testLetter();
-	},
-	 testLetter: function() {
+  userGuess: function(e) {
+    e.preventDefault();
+    this.prepTest();
+  },
+  testLetter: function() {
     currentState = game.get('state');
     currentWord  = game.get('word');
       if (_.contains(currentWord, letter) == true) {
         spots = _.indexOf(currentWord, letter);
         console.log('hell yeah dude', spots);
-   			splitState = currentState.split('');
-      	splitState[spots] = letter;
-      	currentState = splitState.join('');
-      	game.set({state: currentState});
-      	console.log(currentState);
+        splitState = currentState.split('');
+        splitState[spots] = letter;
+        currentState = splitState.join('');
+        game.set({state: currentState});
+        console.log(currentState);
       } else {
         console.log('nah dog');
         letterView = new LetterView({model: currentLetter});
@@ -48,18 +50,24 @@ var LetterInput = Backbone.View.extend({
       }
     this.potentialWinner();
   },
-   incorrectGuess: function() {
+  incorrectGuess: function() {
     attempts = game.get('threshold');
-	 	currentThreshold = (attempts - 1);
-	 	game.set({threshold: currentThreshold});
-	 	console.log(currentThreshold);
-	 	this.loseLimb();
-	 		if (currentThreshold == 0) {
-	 			sweetAlert('Yalls is finished');
-	 		}
+    currentThreshold = (attempts - 1);
+    game.set({threshold: currentThreshold});
+    console.log(currentThreshold);
+    this.loseLimb();
+      if (currentThreshold == 0) {
+        sweetAlert('Yalls is finished');
+      }
+  },
+  potentialWinner: function() {
+    checkPoint = game.get('state');
+    if (_.contains(currentState, '_') == false) {
+      sweetAlert('You did it!');
+    }
   },
   loseLimb: function() {
-  	if (currentThreshold == 6){
+    if (currentThreshold == 6){
   		new BodyPartView({model: bodyParts.models[5]});
   	} else if  (currentThreshold == 5){
   		new BodyPartView({model: bodyParts.models[4]});
