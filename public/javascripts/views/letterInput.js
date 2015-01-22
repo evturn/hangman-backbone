@@ -2,7 +2,7 @@ var LetterInput = Backbone.View.extend({
 	el: '#letter-input',
 	template: _.template($('#letter-input-template').html()),
 	events: {
-		'click #input-submit': 'userGuess'
+		'click #input-submit': 'userGuess',
 	},
 	initialize: function() {
 		this.render();
@@ -17,7 +17,7 @@ var LetterInput = Backbone.View.extend({
 		letter = String(guessValue);
 		currentLetter = new Letter({letter: letter});
 		letters = new Letters();
-		letter.push(currentLetter);
+		letters.push(currentLetter);
 		$('#input-field').val('');
 		newTries = game.get('tries');
 		currentTries = (newTries + 1);
@@ -47,18 +47,18 @@ var LetterInput = Backbone.View.extend({
 	 	console.log(currentThreshold);
 	 	this.loseLimb();
 	 		if (currentThreshold == 0) {
-	 			alert('Yalls is finished');
+	 			sweetAlert('Yalls is finished');
 	 		}
   },
   loseLimb: function() {
   	if (currentThreshold == 6){
-  		new BodyPartView({model: bodyParts.models[0]});
+  		new BodyPartView({model: bodyParts.models[5]});
   	} else if  (currentThreshold == 5){
   		new BodyPartView({model: bodyParts.models[4]});
   	} else if  (currentThreshold == 4){
-  		new BodyPartView({model: bodyParts.models[5]});
+  		new BodyPartView({model: bodyParts.models[3]});
   	} else if  (currentThreshold == 3){
-  		new BodyPartView({model: bodyParts.models[6]});
+  		new BodyPartView({model: bodyParts.models[2]});
   	}	else if  (currentThreshold == 2){
   		new BodyPartView({model: bodyParts.models[1]});
   	} else if  (currentThreshold == 1){
