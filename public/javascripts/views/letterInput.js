@@ -35,14 +35,11 @@ var LetterInput = Backbone.View.extend({
     currentWord  = game.get('word');
       if (_.contains(currentWord, letter) == true) {
         spots = _.indexOf(currentWord, letter);
-        console.log('hell yeah dude', spots);
    			splitState = currentState.split('');
       	splitState[spots] = letter;
       	currentState = splitState.join('');
       	game.set({state: currentState});
-      	console.log(currentState);
       } else {
-        console.log('nah dog');
         letterView = new LetterView({model: currentLetter});
         this.incorrectGuess();
       }
@@ -52,7 +49,6 @@ var LetterInput = Backbone.View.extend({
     attempts = game.get('threshold');
 	 	currentThreshold = (attempts - 1);
 	 	game.set({threshold: currentThreshold});
-	 	console.log(currentThreshold);
 	 	this.loseLimb();
 	 		if (currentThreshold == 0) {
 	 			sweetAlert('Yalls is finished');
