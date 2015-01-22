@@ -40,7 +40,6 @@ var LetterInput = Backbone.View.extend({
       	splitState[spots] = letter;
       	currentState = splitState.join('');
       	game.set({state: currentState});
-      	console.log(currentState);
       } else {
         console.log('nah dog');
         letterView = new LetterView({model: currentLetter});
@@ -48,7 +47,7 @@ var LetterInput = Backbone.View.extend({
       }
     this.potentialWinner();
   },
-   incorrectGuess: function() {
+  incorrectGuess: function() {
     attempts = game.get('threshold');
 	 	currentThreshold = (attempts - 1);
 	 	game.set({threshold: currentThreshold});
