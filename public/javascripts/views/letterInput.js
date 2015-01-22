@@ -3,6 +3,7 @@ var LetterInput = Backbone.View.extend({
 	template: _.template($('#letter-input-template').html()),
 	events: {
 		'click #input-submit': 'userGuess',
+    'click #start-over': 'startOver'
 	},
 	initialize: function() {
 		this.render();
@@ -66,5 +67,11 @@ var LetterInput = Backbone.View.extend({
   	} else {
 
   	}
+  },
+  startOver: function() {
+    game = new Game();
+    new GameView({model: game});
+    rebirth = new BodyPart({img: 'images/man6.png'});
+    new BodyPartView({model: rebirth});
   }
 });
