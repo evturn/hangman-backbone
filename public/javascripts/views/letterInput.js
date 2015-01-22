@@ -57,14 +57,16 @@ var LetterInput = Backbone.View.extend({
     console.log(currentThreshold);
     this.loseLimb();
       if (currentThreshold == 0) {
+        this.startOver();
         sweetAlert('Yalls is finished');
       }
   },
   potentialWinner: function() {
     checkPoint = game.get('state');
-    if (_.contains(currentState, '_') == false) {
-      sweetAlert('You did it!');
-    }
+      if (_.contains(currentState, '_') == false) {
+        this.startOver();
+        sweetAlert('You did it!');
+      }
   },
   loseLimb: function() {
     if (currentThreshold == 6){
@@ -90,5 +92,6 @@ var LetterInput = Backbone.View.extend({
     new GameView({model: game});
     rebirth = new BodyPart({img: 'images/man6.png'});
     new BodyPartView({model: rebirth});
+    $('#letters').empty();
   }
 });
