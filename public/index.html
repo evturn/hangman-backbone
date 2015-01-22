@@ -11,28 +11,31 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-      <a class="navbar-brand" href="http://evturn.com">
-        <img class="logo" alt="Brand" src="http://evturn.com/assets/img/ev_sten.png">
-      </a>
-    <h3>HANGMAN</h3>
-    </div>
-	</div>
-</nav>
-	
 <div class="container-fluid">
+	<nav class="navbar navbar-default">
+		<div class="navbar-header navline">
+      <ul>
+      	<li>
+      		<a class="navbar-brand" href="http://evturn.com">
+        		<img class="logo" alt="Brand" src="http://evturn.com/assets/img/ev_sten.png">
+      		</a>
+      	</li>
+    		<li>
+    			<h2>HANGMAN</h2>
+    		</li>
+  		</ul>
+    </div>
+	</nav>
 	<div class="row">
-		<div class="col-xs-8 col-xs-offset-2 col-sm-7 col-sm-offset-5 col-md-2" id="game"></div>
-		<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-6 col-md-5 col-md-offset-5" id="hangman-image">
-			<img src="images/man6.png" id="image">
+		<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-4" id="game"></div>
+		<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-4" id="hangman-image">
+			<img class="img-responsive" src="images/man6.png" id="image">
 		</div>
-			<div class="col-xs-8 col-xs-offset-2 col-sm-7 col-sm-offset-5 col-md-2" id="letter-input"></div>
-			<div class="col-xs-8 col-xs-offset-2 col-sm-7 col-sm-offset-5 col-md-2" id="letter-bank">
-				<ul id="letters">
-				</ul>
-			</div>
+		<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-4" id="letter-input"></div>
+		<div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-6 col-md-4" id="letter-bank">
+			<ul id="letters">
+			</ul>
+		</div>
 	</div>
 </div>
 
@@ -44,8 +47,8 @@
 
 <script type="text/template" id="letter-input-template">
 	<input class="form-control input-lg" type"text" id="input-field">
-	<input class="form-control input-lg" type="submit" id="input-submit" value="Go">
-	<input class="form-control" type="submit" id="start-over" value="&#8634;">
+		<input class="form-control input-lg" type="submit" id="input-submit" value="Go">	
+		<input class="form-control input-lg" type="submit" id="start-over" value="&#8634;">
 </script>
 
 <script type="text/template" id="letter-bank-template">
@@ -55,7 +58,7 @@
 </script>
 
 <script type="text/template" id="hangman-image-template">
-	<img src="<%= img %>" id="image">
+	<img class="img-responsive" src="<%= img %>" id="image">
 </script>
 
 
