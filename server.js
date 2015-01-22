@@ -2,6 +2,7 @@ var express 	 = require('express'),
 		path 			 = require('path'),
 		logger 		 = require('morgan'),
 		bodyParser = require('body-parser');
+		faker 		 = require('faker');
 
 var app = express();
 app.use(express.static('public'));
@@ -11,7 +12,8 @@ app.get('/', function(require, response) {
 });
 
 app.get('/words', function(request, response) {
-	var randomWord = words[Math.floor(Math.random() * words.length)];
+	grabWords();
+	var randomWord = words[Math.floor(Math.random() * words.length)];;
 	var characters = randomWord.length;
 	String.prototype.repeat = function(characters) {
       return new Array(characters + 1).join(this);
@@ -25,7 +27,15 @@ app.get('/bodyparts', function(request, response) {
 	response.status(200).json(hangmen);
 });
 
-words = ["carpet"];
+words = [];
+
+grabWords = function() {
+		for(i = 50; i >= 0; i--) {
+			words.push(faker.hacker.noun());
+		};
+};
+
+
 
 hangmen = [{img: 'images/man1.png'}, {img: 'images/man2.png'}, {img: 'images/man3.png'}, {img: 'images/man4.png'}, {img: 'images/man5.png'}, {img: 'images/man6.png'}
 ];
