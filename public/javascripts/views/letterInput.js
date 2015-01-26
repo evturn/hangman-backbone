@@ -36,10 +36,10 @@ var LetterInput = Backbone.View.extend({
     currentState = game.get('state');
     currentWord  = game.get('word');
       if (_.contains(currentWord, letter) == true) {
-        spots = _.indexOf(currentWord, letter);
-        console.log('hell yeah dude', spots);
+        spot = _.indexOf(currentWord, letter);
+        console.log('hell yeah dude', spot);
         splitState = currentState.split('');
-        splitState[spots] = letter;
+        splitState[spot] = letter;
         currentState = splitState.join('');
         game.set({state: currentState});
         console.log(currentState);
