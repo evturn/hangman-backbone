@@ -58,7 +58,7 @@ var LetterInput = Backbone.View.extend({
     this.loseLimb();
       if (currentThreshold == 0) {
         this.startOver();
-        sweetAlert('Yalls is finished');
+        sweetAlert('Yalls is finished! Answer was ' + currentWord);
       }
   },
   potentialWinner: function() {
