@@ -11,8 +11,8 @@ h4 {
 }
 
 img#image {
-	max-height: 400px;
-	max-width: 50%;
+	max-height: 100%;
+	max-width: 30%;
 	position: center;
 }
 
