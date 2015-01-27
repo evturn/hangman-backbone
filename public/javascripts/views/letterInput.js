@@ -7,6 +7,7 @@ var LetterInput = Backbone.View.extend({
     'keypress #input-field': 'userEnter'
 	},
 	initialize: function() {
+    used = [];
 		this.render();
 	},
 	render: function() {
@@ -16,17 +17,16 @@ var LetterInput = Backbone.View.extend({
   prepTest: function() {
     guessValue = $('#input-field').val();
     letter = String(guessValue).toLowerCase();
-    used = [];
       if ($.inArray(letter, used) === -1) {
         used.push(letter);
+        newTries = game.get('tries');
+        currentTries = (newTries + 1);
+        game.set({tries: currentTries});
+        currentLetter = new Letter({letter: letter});
       } else {
         alert("You already used " + letter);
       }
-    currentLetter = new Letter({letter: letter});
     $('#input-field').val('');
-    newTries = game.get('tries');
-    currentTries = (newTries + 1);
-    game.set({tries: currentTries});
     this.testLetter();
   },
   userEnter: function(e) {
