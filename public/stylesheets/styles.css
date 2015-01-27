@@ -1,14 +1,13 @@
-#logo {
-	max-width: 50px
-}
-
 a {
 	background-color: transparent;
 }
 
-#main-content {
-	margin-top: 5%;
+#game {
 	text-align: center;
+}
+
+h1 {
+	letter-spacing: 15px;
 }
 
 #image {
@@ -17,17 +16,17 @@ a {
 	margin-left: 7%;
 }
 
-h1 {
-	letter-spacing: 15px;
-}
-
-#game {
-	text-align: center;
-}
-
 li {
 	text-align: center;
 	display: inline-block;
 	list-style-type: none;
 }
 
+#logo {
+	max-width: 50px
+}
+
+#main-content {
+	margin-top: 5%;
+	text-align: center;
+}
