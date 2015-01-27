@@ -32,6 +32,8 @@ words = [];
 grabWords = function() {
 		for(i = 50; i >= 0; i--) {
 			words.push(faker.hacker.noun());
+			words.push(faker.hacker.verb());
+			words.push(faker.hacker.ingverb());
 		};
 };
 
