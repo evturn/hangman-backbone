@@ -24,7 +24,7 @@ var LetterInput = Backbone.View.extend({
         game.set({tries: currentTries});
         currentLetter = new Letter({letter: letter});
       } else {
-        alert("You already used " + letter);
+        sweetAlert("You already used " + letter);
       }
     $('#input-field').val('');
     this.testLetter();
