@@ -20,23 +20,25 @@
     </div>
   </div>
 </nav>
-<div class="row" id="main-content">
-	<div class="col-xs-12 col-sm-4 col-sm-offset-4 col-md-4" id="game"></div>
-	<div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 col-md-4" id="letter-input"></div>
-	<div class="col-xs-12 col-sm-12 col-md-12" id="hangman-image">
-		<a><img src="images/man6.png" id="image"></a>
-	</div>
-	<div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-6 col-md-4" id="letter-bank">
-		<ul id="letters">
-		</ul>
-	</div>
-</div>
-</div>
 
+<main>
+	<div class="container-fluid">
+		<div class="row" id="main-content">
+			<div class="col-xs-12 col-sm-12 col-md-12" id="hangman-image">
+				<a><img src="images/man6.png" id="image"></a>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4" id="game"></div>
+			<div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 col-md-4" id="letter-input"></div>
+		</div>
+			<div class="col-xs-6 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-4" id="letter-bank">
+				<ul id="letters">
+				</ul>
+			</div>
+	</div>
+</main>
 
 <script type="text/template" id="game-template">
 	<span class="badge">Lives <%= threshold %></span>
-	<span class="badge left">Guesses <%= tries %></span>
 	<h4><%= state %></h4>
 </script>
 
