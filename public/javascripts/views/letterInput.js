@@ -3,7 +3,7 @@ var LetterInput = Backbone.View.extend({
 	template: _.template($('#letter-input-template').html()),
 	events: {
 		'click #input-submit': 'userGuess',
-    'click #start-over': 'startOver',
+    'click .sweet-alert': 'startOver',
     'keypress #input-field': 'userEnter'
 	},
 	initialize: function() {
@@ -24,7 +24,7 @@ var LetterInput = Backbone.View.extend({
         game.set({tries: currentTries});
         currentLetter = new Letter({letter: letter});
       } else {
-        sweetAlert("You already used " + letter);
+        sweetAlert("You already used '" + letter +"'");
       }
     $('#input-field').val('');
     this.testLetter();
@@ -67,15 +67,15 @@ var LetterInput = Backbone.View.extend({
     console.log(currentThreshold);
     this.loseLimb();
       if (currentThreshold == 0) {
+        sweetAlert('Yalls is finished! Answer was "' + currentWord + '"');
         this.startOver();
-        sweetAlert('Yalls is finished! Answer was ' + currentWord);
       }
   },
   potentialWinner: function() {
     checkPoint = game.get('state');
       if (_.contains(currentState, '_') == false) {
-        this.startOver();
         sweetAlert('You did it!');
+        this.startOver(); 
       }
   },
   loseLimb: function() {
@@ -99,9 +99,10 @@ var LetterInput = Backbone.View.extend({
   },
   startOver: function() {
     game = new Game();
-    new GameView({model: game});
-    rebirth = new BodyPart({img: 'images/man6.png'});
-    new BodyPartView({model: rebirth});
+    gameView = new GameView({model: game});
+    bodyPart = new BodyPart({img: 'images/man6.png'});
+    bodyPartView = new BodyPartView({model: bodyPart});
     $('#letters').empty();
-  }
+    this.initialize();
+  },
 });

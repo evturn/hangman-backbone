@@ -8,5 +8,5 @@ var Game = Backbone.Model.extend({
 	urlRoot: '/words',
 	initialize: function() {
 		this.fetch({reset: true});
-	}
+	},
 });

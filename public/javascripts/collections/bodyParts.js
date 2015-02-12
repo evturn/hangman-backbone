@@ -3,6 +3,5 @@ var BodyParts = Backbone.Collection.extend({
 	url: '/bodyparts',
 	initialize: function() {
 		this.fetch({reset: true});
-		console.log(this);
 	}
 });
