@@ -1,5 +1,6 @@
 var BodyPartView = Backbone.View.extend({
 	el: '#hangman-image',
+	className: 'img-responsive',
 	template: _.template($('#hangman-image-template').html()),
 	initialize: function() {
 		this.render();

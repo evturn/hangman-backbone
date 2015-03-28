@@ -2,7 +2,7 @@ var LetterView = Backbone.View.extend({
 	el: '#letters',
 	tagName: 'li',
 	className: 'letter',
-	template: _.template($('#letter-bank-template').html()),
+	template: _.template($('#letter-template').html()),
 	initialize: function() {
 		this.render();
 	},
