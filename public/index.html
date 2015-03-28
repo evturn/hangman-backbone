@@ -14,8 +14,6 @@
 
 	<div class="container-fluid">
 		<div class="row">
-
-
 				<div id="bank">
 					<ul id="letters">
 				
@@ -24,6 +22,8 @@
 					</ul>
 				</div>
 				<div id="lives">
+
+					<!-- LIVES LEFT	 -->
 
 				</div>
 			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -65,6 +65,7 @@
 			<h2 id="state"><%= state.toUpperCase() %></h2>
 		</div>
 	</script>
+
 	<script type="text/template" id="lives-template">
 		<div id="lives">
 			<h2><label class="label label-default"><%= threshold %> lives</label></h2>
@@ -74,14 +75,12 @@
 	<script type="text/template" id="input-template">
 		<div class="form-group">
 			<input class="form-control" maxlength="1" type"text" id="input-field">
-			<label>PRESS ENTER</label>
+			<label>HIT ENTER</label>
 		</div>
 	</script>
 
 	<script type="text/template" id="letter-template">
-			<li>
-				<h3><%= letter.toUpperCase() %></h3>
-			</li>
+		<li><h2><%= letter.toUpperCase() %></h2></li>
 	</script>
 
 	<script type="text/template" id="hangman-image-template">

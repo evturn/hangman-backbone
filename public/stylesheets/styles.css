@@ -20,7 +20,7 @@
 
 #image {
 	display: inline-block;
-	max-height: 250px;
+	max-height: 300px;
 	border: 1px solid #000;
 	border-radius: 8px;
 }
@@ -37,4 +37,10 @@ ul#letters li {
 
 label.label-default {
 	letter-spacing: 0px;
+}
+
+@media (max-width: 440px) {
+	#state {
+		font-size: 20px;
+	}
 }
