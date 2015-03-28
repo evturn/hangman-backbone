@@ -24,10 +24,8 @@
 				
 			</div>
 		</div>
+	</div>
 
-
-
-		
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 text-center" id="hangman-image">
@@ -66,7 +64,8 @@
 
 
 	<script type="text/template" id="game-state-template">
-		<h2 id="state"><%= state.toUpperCase() %><label class="label label-default"><%= threshold %> lives</label></h2>		
+		<h2><label class="label label-default"><%= threshold %> lives</label></h2>
+		<h2 id="state"><%= state.toUpperCase() %></h2>
 	</script>
 
 	<script type="text/template" id="input-template">
