@@ -66,16 +66,25 @@
 	</div>
 
 
+
+	<script type="text/template" id="letter-template">
+		<li><h1><label class="label label-danger"><%= letter.toUpperCase() %></label></h1></li>
+	</script>
+
+	<script type="text/template" id="lives-template">
+		<div id="lives">
+			<h1><label class="label label-primary"><%= threshold %> lives</label></h1>
+		</div>
+	</script>
+
 	<script type="text/template" id="game-state-template">
 		<div id="word">
 			<h1 id="state"><%= state.toUpperCase() %></h1>
 		</div>
 	</script>
 
-	<script type="text/template" id="lives-template">
-		<div id="lives">
-			<h2><label class="label label-primary"><%= threshold %> lives</label></h2>
-		</div>
+	<script type="text/template" id="hangman-image-template">
+		<a><img class="img-responsive" id="image" src="<%= img %>" ></a>
 	</script>
 
 	<script type="text/template" id="input-template">
@@ -84,15 +93,6 @@
 			<label>HIT ENTER</label>
 		</div>
 	</script>
-
-	<script type="text/template" id="letter-template">
-		<li><h2><label class="label label-danger"><%= letter.toUpperCase() %></label></h2></li>
-	</script>
-
-	<script type="text/template" id="hangman-image-template">
-		<a><img class="img-responsive" id="image" src="<%= img %>" ></a>
-	</script>
-
 
 	<script src="javascripts/lib/jquery.js"></script>
 	<script src="javascripts/lib/underscore.js"></script>
