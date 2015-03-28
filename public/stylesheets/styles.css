@@ -6,10 +6,6 @@ h1 {
 	font-family: monospace;
 }
 
-small {
-	color: red;
-}
-
 a {
 	background: transparent;
 }
@@ -53,6 +49,10 @@ ul#letters li {
 	padding: 5px; 
 }
 
+ul#letters {
+	margin-bottom: 0;
+}
+
 label.label {
 	font-family: monospace;
 }
@@ -63,5 +63,29 @@ label.label {
 	}
 	#image {
 		max-height: 300px;
+	}
+}
+
+@media (max-width: 320px) {
+	#state {
+		font-size: 13px;
+	}
+	#image {
+		max-height: 165px;
+	}
+	#bank {
+		min-height: 30px;
+	}
+	label.label.label-primary {
+		font-size: 15px;
+	}
+	h1 {
+		font-size: 15px;
+	}
+	ul#letters li {
+		padding: 0px;
+	}
+	li {
+		max-height: 30px;
 	}
 }
