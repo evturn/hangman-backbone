@@ -28,10 +28,6 @@ footer {
 	min-height: 80px;
 }
 
-#lives {
-	float: right;
-}
-
 #hangman-image {
 	padding: 30px;
 }
