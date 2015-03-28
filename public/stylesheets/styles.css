@@ -10,6 +10,10 @@ a {
 	background: transparent;
 }
 
+footer {
+	margin-bottom: 0;
+}
+
 #header {
 	background-color: #FCF6F6;
 	border-bottom: 1px solid #a3a3a3;
@@ -53,12 +57,20 @@ label.label {
 }
 
 @media (max-width: 440px) {
-	
 	#state {
 		font-size: 13px;
 	}
 	#image {
 		max-height: 165px;
+	}
+	#input {
+		max-height: 165px;
+	}
+	div.form-group {
+		position: absolute;
+		bottom: 0;
+		padding-right: 65%;
+		
 	}
 	#bank {
 		min-height: 30px;
@@ -74,5 +86,17 @@ label.label {
 	}
 	li {
 		max-height: 30px;
+	}
+}
+
+@media (max-width: 765px) {
+	#input {
+		height: 275px;
+	}
+	div.form-group {
+		position: absolute;
+		bottom: 0;
+		padding-right: 65%;
+		
 	}
 }
