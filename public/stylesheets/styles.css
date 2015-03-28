@@ -1,3 +1,22 @@
-h3 {
+#state {
 	letter-spacing: 15px;
+}
+
+#image {
+	display: inline-block;
+	max-height: 250px;
+}
+
+#bank {
+	min-height: 80px;
+}
+
+ul#letters li {
+	display: inline-block;
+	list-style-type: none;
+	padding: 5px; 
+}
+
+label.label-default {
+	letter-spacing: 0px;
 }
