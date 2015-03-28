@@ -2,9 +2,15 @@
 	letter-spacing: 15px;
 }
 
+#hangman-image {
+	padding: 30px;
+}
+
 #image {
 	display: inline-block;
 	max-height: 250px;
+	border: 1px solid #000;
+	border-radius: 8px;
 }
 
 #bank {
