@@ -2,16 +2,25 @@ body {
 	font-family: monospace;
 }
 
+h1 {
+	font-family: monospace;
+}
+
+small {
+	color: red;
+}
+
+#header {
+	border-bottom: 1px solid #a3a3a3;
+}
+
 #state {
 	letter-spacing: 15px;
 }
 
 #bank {
 	float: left;
-}
-
-#word {
-	position: center;
+	min-height: 80px;
 }
 
 #lives {
@@ -30,10 +39,6 @@ body {
   -webkit-box-shadow: 0px 4px 17px -5px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 4px 17px -5px rgba(0,0,0,0.75);
 	box-shadow: 0px 4px 17px -5px rgba(0,0,0,0.50);
-}
-
-#bank {
-	min-height: 80px;
 }
 
 ul#letters li {
