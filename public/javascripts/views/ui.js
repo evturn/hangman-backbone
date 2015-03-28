@@ -10,6 +10,9 @@ var UI = Backbone.View.extend({
 	},
   start: function() {
     game = new Game();
+    game.set({used: []});
+    bodyParts = new BodyParts();
+    bodyParts.fetch();
     var gameState = new GameState({model: game});
     var bodyPart = new BodyPart({img: 'images/man6.png'});
     var bodyPartView = new BodyPartView({model: bodyPart});
@@ -44,55 +47,40 @@ var UI = Backbone.View.extend({
         state[idx] = letter;
         while (idx !== -1) {
           var idx = word.indexOf(letter, idx + 1);
-          console.log('hell yeah dude', idx);
+          console.log('hell yeah dude');
           state[idx] = letter;
-      }
-        var state = state.join('');
-        game.set({state: state});
-        console.log(state);
+        }
+          var state = state.join('');
+          game.set({state: state});
+          console.log(state);
+          this.potentialWinner();
       } else {
         console.log('nah dog');
         var letter = new Letter({letter: letter})
         var letterView = new LetterView({model: letter});
-        this.incorrectGuess();
+        this.incorrect();
       }
-    this.potentialWinner();
   },
-  incorrectGuess: function() {
-    attempts = game.get('threshold');
-    currentThreshold = (attempts - 1);
-    game.set({threshold: currentThreshold});
-    console.log(currentThreshold);
-    this.loseLimb();
-      if (currentThreshold == 0) {
-        sweetAlert('Yalls is finished! Answer was "' + currentWord + '"');
-        this.startOver();
+  incorrect: function() {
+    var threshold = (game.get('threshold') -1);
+    game.set({threshold: threshold});
+      if (threshold === 0) {
+        sweetAlert('Yalls is finished! Answer was "' + game.get('word').toUpperCase() + '"');
+        this.start();
+      } else {
+        this.loseLimb(threshold);
       }
   },
   potentialWinner: function() {
-    checkPoint = game.get('state');
-      if (_.contains(currentState, '_') == false) {
-        sweetAlert('You did it!');
-        this.startOver(); 
+    var state = game.get('state');
+      if (_.contains(state, '_') === false) {
+        sweetAlert(game.get('word').toUpperCase() + '!\n' + 'You did it!');
+        this.start(); 
       }
   },
-  loseLimb: function() {
-    if (currentThreshold == 6){
-  		new BodyPartView({model: bodyParts.models[5]});
-  	} else if  (currentThreshold == 5){
-  		new BodyPartView({model: bodyParts.models[4]});
-  	} else if  (currentThreshold == 4){
-  		new BodyPartView({model: bodyParts.models[3]});
-  	} else if  (currentThreshold == 3){
-  		new BodyPartView({model: bodyParts.models[2]});
-  	}	else if  (currentThreshold == 2){
-  		new BodyPartView({model: bodyParts.models[1]});
-  	} else if  (currentThreshold == 1){
-  		new BodyPartView({model: bodyParts.models[0]});
-  	} else if  (currentThreshold == 0){
-  		new BodyPartView({model: bodyParts.models[0]})
-  	} else {
-
-  	}
+  loseLimb: function(threshold) {
+    var i = (threshold - 1);
+    console.log(i)
+  	var bodyPartView = new BodyPartView({model: bodyParts.models[i]});
   },
 });
