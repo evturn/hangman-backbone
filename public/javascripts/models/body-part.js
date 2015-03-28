@@ -1,0 +1,1 @@
+var BodyPart = Backbone.Model.extend({});
