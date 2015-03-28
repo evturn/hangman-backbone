@@ -2,6 +2,7 @@ var Game = Backbone.Model.extend({
 	defaults: {
 		word: '',
 		state: '',
+		used: [],
 		tries: 0,
 		threshold: 6
 	},

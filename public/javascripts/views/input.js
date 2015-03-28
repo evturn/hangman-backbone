@@ -2,42 +2,32 @@ var Input = Backbone.View.extend({
 	el: '#input',
 	template: _.template($('#input-template').html()),
 	events: {
-		'click #input-submit'   : 'userGuess',
     'click .sweet-alert'    : 'startOver',
-    'keypress #input-field' : 'userEnter'
+    'keypress #input-field' : 'submit'
 	},
-	initialize: function() {
-    
+	initialize: function() {    
 		this.render();
 	},
 	render: function() {
 		this.$el.html(this.template());
 		return this;
 	},
-  prepTest: function() {
-    var used = [];
-    var guess = $('#input-field').val();
-    var letter = String(guess).toLowerCase();
-      if ($.inArray(letter, used) === -1) {
-        used.push(letter);
-        var tries = parseInt(game.get('tries') + 1);
-        console.log(tries);
-        game.set({tries: tries});
-        currentLetter = new Letter({letter: letter});
-      } else {
-        sweetAlert("You already used '" + letter +"'");
-      }
-    $('#input-field').val('');
-    this.testLetter();
-  },
-  userEnter: function(e) {
+  submit: function(e) {
     if (e.which === 13) {
-      this.prepTest();
+      var letter = String($('#input-field').val()).toLowerCase();
+      console.log(letter);
+      console.log(game);
+      var used = game.get('used');
+        if ($.inArray(letter, used) === -1) {
+          used.push(letter);
+          var tries = parseInt(game.get('tries') + 1);
+          game.set({tries: tries});
+        } else {
+          sweetAlert("You already used '" + letter + "'");
+        }
+      $('#input-field').val('');
+      this.testLetter();
     }
-  },
-  userGuess: function(e) {
-    e.preventDefault();
-    this.prepTest();
   },
   testLetter: function() {
     currentState = game.get('state');
