@@ -5,9 +5,17 @@ var Input = Backbone.View.extend({
     'click .sweet-alert'    : 'startOver',
     'keypress #input-field' : 'submit'
 	},
-	initialize: function() {    
-		this.render();
+	initialize: function() {
+		this.start();
 	},
+  start: function() {
+    game = new Game();
+    gameState = new GameState({model: game});
+    bodyPart = new BodyPart({img: 'images/man6.png'});
+    bodyPartView = new BodyPartView({model: bodyPart});
+    $('#letters').empty();
+    this.render();
+  },
 	render: function() {
 		this.$el.html(this.template());
 		return this;
@@ -86,13 +94,5 @@ var Input = Backbone.View.extend({
   	} else {
 
   	}
-  },
-  startOver: function() {
-    game = new Game();
-    gameState = new GameState({model: game});
-    bodyPart = new BodyPart({img: 'images/man6.png'});
-    bodyPartView = new BodyPartView({model: bodyPart});
-    $('#letters').empty();
-    this.initialize();
   },
 });
