@@ -2,12 +2,12 @@ var Input = Backbone.View.extend({
 	el: '#input',
 	template: _.template($('#input-template').html()),
 	events: {
-		'click #input-submit': 'userGuess',
-    'click .sweet-alert': 'startOver',
-    'keypress #input-field': 'userEnter'
+		'click #input-submit'   : 'userGuess',
+    'click .sweet-alert'    : 'startOver',
+    'keypress #input-field' : 'userEnter'
 	},
 	initialize: function() {
-    used = [];
+    
 		this.render();
 	},
 	render: function() {
@@ -15,13 +15,14 @@ var Input = Backbone.View.extend({
 		return this;
 	},
   prepTest: function() {
-    guessValue = $('#input-field').val();
-    letter = String(guessValue).toLowerCase();
+    var used = [];
+    var guess = $('#input-field').val();
+    var letter = String(guess).toLowerCase();
       if ($.inArray(letter, used) === -1) {
         used.push(letter);
-        newTries = game.get('tries');
-        currentTries = (newTries + 1);
-        game.set({tries: currentTries});
+        var tries = parseInt(game.get('tries') + 1);
+        console.log(tries);
+        game.set({tries: tries});
         currentLetter = new Letter({letter: letter});
       } else {
         sweetAlert("You already used '" + letter +"'");
