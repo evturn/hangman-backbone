@@ -26,16 +26,15 @@ var Input = Backbone.View.extend({
           sweetAlert("You already used '" + letter + "'");
         }
       $('#input-field').val('');
-      this.testLetter();
+      this.compare(letter);
     }
   },
-  testLetter: function() {
-    currentState = game.get('state');
-    currentWord  = game.get('word');
-      if (_.contains(currentWord, letter) == true) {
-        splitState = currentState.split('');
-        var pos = currentWord.indexOf(letter);
-        splitState[pos] = letter;
+  compare: function(letter) {
+    var state = game.get('state').split('');
+    var word  = game.get('word');
+      if (_.contains(word, letter) === true) {
+        var idx = word.indexOf(letter);
+        state[idx] = letter;
         while (pos !== -1) {
           pos = currentWord.indexOf(letter, pos + 1);
           console.log('hell yeah dude', pos);
