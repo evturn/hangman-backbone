@@ -1,1 +1,1 @@
-var input = new Input();
+var ui = new UI();

@@ -1,8 +1,8 @@
-var Input = Backbone.View.extend({
+var UI = Backbone.View.extend({
 	el: '#input',
 	template: _.template($('#input-template').html()),
 	events: {
-    'click .sweet-alert'    : 'startOver',
+    'click .sweet-alert'    : 'start',
     'keypress #input-field' : 'submit'
 	},
 	initialize: function() {
@@ -10,9 +10,9 @@ var Input = Backbone.View.extend({
 	},
   start: function() {
     game = new Game();
-    gameState = new GameState({model: game});
-    bodyPart = new BodyPart({img: 'images/man6.png'});
-    bodyPartView = new BodyPartView({model: bodyPart});
+    var gameState = new GameState({model: game});
+    var bodyPart = new BodyPart({img: 'images/man6.png'});
+    var bodyPartView = new BodyPartView({model: bodyPart});
     $('#letters').empty();
     this.render();
   },
