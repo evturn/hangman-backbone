@@ -1,6 +1,6 @@
 var GameView = Backbone.View.extend({
-	el: '#game',
-  template: _.template($('#game-template').html()),
+	el: '#game-state',
+  template: _.template($('#game-state-template').html()),
 	initialize: function() {
     this.listenTo(this.model, 'change', this.render);
   },
