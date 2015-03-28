@@ -16,7 +16,6 @@ var Input = Backbone.View.extend({
     if (e.which === 13) {
       var letter = String($('#input-field').val()).toLowerCase();
       console.log(letter);
-      console.log(game);
       var used = game.get('used');
         if ($.inArray(letter, used) === -1) {
           used.push(letter);
@@ -35,17 +34,18 @@ var Input = Backbone.View.extend({
       if (_.contains(word, letter) === true) {
         var idx = word.indexOf(letter);
         state[idx] = letter;
-        while (pos !== -1) {
-          pos = currentWord.indexOf(letter, pos + 1);
-          console.log('hell yeah dude', pos);
-          splitState[pos] = letter;
+        while (idx !== -1) {
+          var idx = word.indexOf(letter, idx + 1);
+          console.log('hell yeah dude', idx);
+          state[idx] = letter;
       }
-        currentState = splitState.join('');
-        game.set({state: currentState});
-        console.log(currentState);
+        var state = state.join('');
+        game.set({state: state});
+        console.log(state);
       } else {
         console.log('nah dog');
-        letterView = new LetterView({model: currentLetter});
+        var letter = new Letter({letter: letter})
+        var letterView = new LetterView({model: letter});
         this.incorrectGuess();
       }
     this.potentialWinner();
