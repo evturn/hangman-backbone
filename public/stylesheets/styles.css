@@ -2,6 +2,18 @@
 	letter-spacing: 15px;
 }
 
+#bank {
+	float: left;
+}
+
+#word {
+	position: center;
+}
+
+#lives {
+	float: right;
+}
+
 #hangman-image {
 	padding: 30px;
 }
