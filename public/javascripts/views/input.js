@@ -1,6 +1,6 @@
-var LetterInput = Backbone.View.extend({
-	el: '#letter-input',
-	template: _.template($('#letter-input-template').html()),
+var Input = Backbone.View.extend({
+	el: '#input',
+	template: _.template($('#input-template').html()),
 	events: {
 		'click #input-submit': 'userGuess',
     'click .sweet-alert': 'startOver',
