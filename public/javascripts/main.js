@@ -1,12 +1,7 @@
-$(function() {
-
-	hangmanStart();
-
-});
-
 function hangmanStart() {
 	game = new Game();
 	bodyParts = new BodyParts();
-	gameView = new GameView({model: game});
+	gameState = new GameState({model: game});
 	input = new Input();
 };
+hangmanStart();

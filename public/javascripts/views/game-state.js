@@ -1,4 +1,4 @@
-var GameView = Backbone.View.extend({
+var GameState = Backbone.View.extend({
 	el: '#game-state',
   template: _.template($('#game-state-template').html()),
   livesTemplate: _.template($('#lives-template').html()),

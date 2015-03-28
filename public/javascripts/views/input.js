@@ -99,7 +99,7 @@ var Input = Backbone.View.extend({
   },
   startOver: function() {
     game = new Game();
-    gameView = new GameView({model: game});
+    gameState = new GameState({model: game});
     bodyPart = new BodyPart({img: 'images/man6.png'});
     bodyPartView = new BodyPartView({model: bodyPart});
     $('#letters').empty();
