@@ -58,15 +58,7 @@ label.label {
 }
 
 @media (max-width: 440px) {
-	#state {
-		font-size: 20px;
-	}
-	#image {
-		max-height: 300px;
-	}
-}
-
-@media (max-width: 320px) {
+	
 	#state {
 		font-size: 13px;
 	}
