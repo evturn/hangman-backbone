@@ -47,7 +47,7 @@ var UI = Backbone.View.extend({
         state[idx] = letter;
         while (idx !== -1) {
           var idx = word.indexOf(letter, idx + 1);
-          console.log('hell yeah dude');
+          console.log('yep');
           state[idx] = letter;
         }
           var state = state.join('');
